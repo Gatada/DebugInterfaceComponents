@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://e88f751xj6hs"]
+
+[ext_resource type="Script" path="res://components/debugmeter2d/DebugMeter2D.gd" id="1_uc1to"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3w1n0"]
+font_size = 33
+
+[node name="DebugMeter2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uc1to")
+max_value = 100.0
+min_value = 0.0
+initial_value = 100.0
+relative_position_of_baseline = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Bar" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.918
+offset_bottom = 0.135986
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.643137, 0.227451, 1)
+
+[node name="Baseline" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_top = 0.915
+anchor_right = 1.0
+anchor_bottom = 0.918
+offset_top = 2.07996
+offset_bottom = 2.13599
+
+[node name="Value" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.003
+anchor_top = 0.923
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.544
+offset_top = -0.104004
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 8.73992e-05
+text = "100.00"
+label_settings = SubResource("LabelSettings_3w1n0")
+horizontal_alignment = 2
