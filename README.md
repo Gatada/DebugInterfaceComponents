@@ -39,7 +39,9 @@ Move the tools/ folder to your Godot project folder.
 
 # Usage
 
-Drag a packed scenes onto your scene from from any of the folders within tools/debuginterfacecomponents/. Then proceed to customize the meter (they are tools, so changes will update live in the editor). Finally, call the instance to update its state. Depending on what component you use, the calls available will be different. Search for the documentation within the Editor to learn more.
+1. Drag a packed scenes onto your scene from from any of the folders within `tools/debuginterfacecomponents/`.
+2. Then proceed to customize the meter (as they are tools, all changes will update live in the editor).
+3. Finally, call the instance to update its state. Check the documentation of the component you use by clicking `Search Help` within the Godot editor.
 
 # License
 
