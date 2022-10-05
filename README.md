@@ -30,7 +30,7 @@ Manual installation lets you use pre-release versions of this add-on by followin
 
 ## Clone this Git repository
 
-`git clone https://github.com/Gatada/DebugInterfaceComponents.git
+`git clone https://github.com/Gatada/DebugInterfaceComponents.git`
 
 Alternatively, you can download a ZIP archive if you do not have Git installed.
 
