@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6hkl53sn7gqa"
-path="res://.godot/imported/DebugMeter2D.svg-9cebe52b2fdd978c036962f04decf3c3.ctex"
+uid="uid://b2b78vej6j65d"
+path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://components/debugmeter2d/DebugMeter2D.svg"
-dest_files=["res://.godot/imported/DebugMeter2D.svg-9cebe52b2fdd978c036962f04decf3c3.ctex"]
+source_file="res://icon.svg"
+dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
 
 [params]
 

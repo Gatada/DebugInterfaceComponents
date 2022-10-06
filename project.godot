@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Control",
+"class": &"DebugMeter2D",
+"language": &"GDScript",
+"path": "res://tools/debug/debugmeter2d/DebugMeter2D.gd"
+}, {
+"base": "Control",
+"class": &"DebugStateMeter2D",
+"language": &"GDScript",
+"path": "res://tools/debug/debugstatelabel2d/DebugStateLabel2D.gd"
+}]
+_global_script_class_icons={
+"DebugMeter2D": "res://tools/debug/debugmeter2d/DebugMeter2D.svg",
+"DebugStateMeter2D": "res://tools/debug/debugstatelabel2d/DebugStateLabel2D.svg"
+}
+
+[application]
+
+config/name="DebugComponents"
+run/main_scene="res://demo/usageDemo.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+config/icon="res://icon.svg"

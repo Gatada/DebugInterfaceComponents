@@ -1,14 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://bo7xnx4vak3gw"]
 
-[ext_resource type="Script" path="res://components/debugstatelabel2d/DebugStateLabel2D.gd" id="1_vwu7p"]
+[ext_resource type="Script" path="res://tools/debug/debugstatelabel2d/DebugStateLabel2D.gd" id="1_g1j6m"]
 
 [node name="State" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_vwu7p")
+script = ExtResource("1_g1j6m")
 
 [node name="Backdrop" type="ColorRect" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -19,7 +18,6 @@ offset_bottom = -38.0
 color = Color(0, 0, 0, 0.3)
 
 [node name="Caption" type="Label" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
 anchor_bottom = 1.0

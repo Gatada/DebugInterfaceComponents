@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhrk0nfy5lqsq"
-path="res://.godot/imported/DebugStateLabel2D.svg-2f367a084fb96cac0735c48e9954246d.ctex"
+path="res://.godot/imported/DebugStateLabel2D.svg-63c63137d4f2517806ddf1ff9c6b2958.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://components/debugstatelabel2d/DebugStateLabel2D.svg"
-dest_files=["res://.godot/imported/DebugStateLabel2D.svg-2f367a084fb96cac0735c48e9954246d.ctex"]
+source_file="res://tools/debug/debugstatelabel2d/DebugStateLabel2D.svg"
+dest_files=["res://.godot/imported/DebugStateLabel2D.svg-63c63137d4f2517806ddf1ff9c6b2958.ctex"]
 
 [params]
 

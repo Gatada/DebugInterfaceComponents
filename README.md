@@ -43,6 +43,19 @@ Move the tools/ folder to your Godot project folder.
 2. Then proceed to customize the meter (as they are tools, all changes will update live in the editor).
 3. Finally, call the instance to update its state. Check the documentation of the component you use by clicking `Search Help` within the Godot editor.
 
+
+# Sound Effects is in the Demo
+
+The sound effects heard in the demo are made by Kenney (www.kenney.nl). They are free to use in personal, educational and commercial projects.
+It is available from the AssetLib in the Godot editor as a free download.
+
+To find this library as an addon, search the AssetLib for "Kenney Interface Sounds".
+
+Donate to Kenney:   http://support.kenney.nl
+Support Kenney using Patreon:  http://patreon.com/kenney/
+Follow Kenney on Twitter for updates: http://twitter.com/KenneyNL
+	
+
 # License
 
 Copyright © 2022 Gatada.
