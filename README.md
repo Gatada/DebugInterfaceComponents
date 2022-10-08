@@ -60,4 +60,4 @@ Follow Kenney on Twitter for updates: http://twitter.com/KenneyNL
 
 Copyright © 2022 Gatada.
 
-See LICENSE.txt to read the MIT license.
+See LICENSE.md to read the MIT license.
