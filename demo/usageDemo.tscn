@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://e88f751xj6hs" path="res://tools/debug/debugmeter2d/DebugMeter2D.tscn" id="1_gwqr4"]
 [ext_resource type="PackedScene" uid="uid://bo7xnx4vak3gw" path="res://tools/debug/debugstatelabel2d/DebugStateLabel2D.tscn" id="2_mmtn2"]
 [ext_resource type="AudioStream" uid="uid://54bvexpkrxhg" path="res://demo/bong_001.wav" id="4_eyw0t"]
-[ext_resource type="AudioStream" uid="uid://d0bo4m2rxrdxk" path="res://demo/drop_003.wav" id="5_3q2o5"]
+[ext_resource type="AudioStream" uid="uid://bio4flbkok55j" path="res://demo/click_003.wav" id="5_ceqkg"]
 
 [node name="demo" type="Control"]
 layout_mode = 3
@@ -15,22 +15,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b7eub")
 
-[node name="SubzeroDebugMeter" parent="." instance=ExtResource("1_gwqr4")]
+[node name="SubzeroMeter" parent="." instance=ExtResource("1_gwqr4")]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 1.0
+anchor_top = 0.890432
 anchor_right = 0.0
 offset_left = 44.0
-offset_top = -587.0
+offset_top = -516.0
 offset_right = 156.0
-offset_bottom = -58.0
+offset_bottom = -62.0
 max_value = 10.0
 min_value = -5.0
-initial_value = 0.0
-relative_position_of_baseline = 76.689
-change_bar_color_below_baseline = true
+initial_value = -3.0
+relative_position_of_target_line = 66.74
+change_bar_color_below_target_line = true
 
-[node name="SymmetricDebugMeter" parent="." instance=ExtResource("1_gwqr4")]
+[node name="SymmetricMeter" parent="." instance=ExtResource("1_gwqr4")]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -38,41 +38,83 @@ anchor_right = 0.0
 offset_left = 200.0
 offset_top = -587.0
 offset_right = 312.0
-offset_bottom = -58.0
+offset_bottom = -62.0
+max_value = 0.0
 min_value = -100.0
 initial_value = 0.0
-relative_position_of_baseline = 64.856
-change_bar_color_below_baseline = true
+relative_position_of_target_line = 52.106
+change_bar_color_below_target_line = true
 
-[node name="ZeroLabel" parent="." instance=ExtResource("2_mmtn2")]
+[node name="NegativeRangeMeter" parent="." instance=ExtResource("1_gwqr4")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 350.0
+offset_top = -587.0
+offset_right = 462.0
+offset_bottom = -58.0
+grow_horizontal = 1
+grow_vertical = 0
+max_value = -50.0
+min_value = -100.0
+initial_value = -64.0
+relative_position_of_target_line = 33.259
+change_bar_color_below_target_line = true
+
+[node name="ZeroAndUpMeter" parent="." instance=ExtResource("1_gwqr4")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 502.0
+offset_top = -587.0
+offset_right = 614.0
+offset_bottom = -58.0
+grow_horizontal = 1
+grow_vertical = 0
+relative_position_of_target_line = 4.213
+change_bar_color_below_target_line = true
+
+[node name="TargetLabel" parent="." instance=ExtResource("2_mmtn2")]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -210.0
-offset_top = 178.0
-offset_right = -210.0
-offset_bottom = 178.0
+offset_left = -205.0
+offset_top = 123.0
+offset_right = -205.0
+offset_bottom = 123.0
 grow_horizontal = 0
-_caption = "Zero"
+_is_highlighted = true
+_caption = "Target"
+_backdrop_color_highlighted = Color(0, 0.647059, 0.364706, 1)
 
-[node name="PeakedLabel" parent="." instance=ExtResource("2_mmtn2")]
+[node name="ExceededLabel" parent="." instance=ExtResource("2_mmtn2")]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -211.0
-offset_top = 121.0
-offset_right = -211.0
-offset_bottom = 121.0
+offset_left = -205.0
+offset_top = 179.0
+offset_right = -205.0
+offset_bottom = 179.0
 grow_horizontal = 0
-_caption = "Peaked"
+_is_highlighted = true
+_caption = "Exceeded"
+_backdrop_color_highlighted = Color(0.784314, 0.0509804, 0.027451, 1)
 
-[node name="ZeroHighlighted" type="AudioStreamPlayer2D" parent="."]
+[node name="TargetReached" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_eyw0t")
 
-[node name="MeterPeaked" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_3q2o5")
+[node name="ExceedingRange" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ceqkg")
 
-[connection signal="finished" from="ZeroHighlighted" to="." method="_on_zero_highlighted_finished"]
-[connection signal="finished" from="MeterPeaked" to="." method="_on_meter_peaked_finished"]
+[connection signal="input_exceeds_range" from="SubzeroMeter" to="." method="_on_input_exceeding_range"]
+[connection signal="input_reached_target_value" from="SubzeroMeter" to="." method="_on_input_reaching_target_value"]
+[connection signal="input_exceeds_range" from="SymmetricMeter" to="." method="_on_input_exceeding_range"]
+[connection signal="input_reached_target_value" from="SymmetricMeter" to="." method="_on_input_reaching_target_value"]
+[connection signal="input_exceeds_range" from="NegativeRangeMeter" to="." method="_on_input_exceeding_range"]
+[connection signal="input_reached_target_value" from="NegativeRangeMeter" to="." method="_on_input_reaching_target_value"]
+[connection signal="input_exceeds_range" from="ZeroAndUpMeter" to="." method="_on_input_exceeding_range"]
+[connection signal="input_reached_target_value" from="ZeroAndUpMeter" to="." method="_on_input_reaching_target_value"]

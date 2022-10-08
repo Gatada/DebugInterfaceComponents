@@ -12,79 +12,52 @@ extends Control
 ## Allows the debug meters to progress over time.
 var _demo_duration_in_seconds: float = 0
 
-## Ensures the sound effect is finished playing before it repeats the sound.
-var _meter_peaked_is_ready_to_play: bool = true
-
-## Ensures the sound effect is finished playing before it repeats the sound.
-var _zero_highlighted_is_ready_to_play: bool = true
-
 ## Toggle sound played when receiving event signals.
-var preference_play_sounds: bool = false
+@export var _play_event_sounds: bool = true
 
 
 func _process(delta: float) -> void:
-	var input = sin(_demo_duration_in_seconds)
-	_update_symmetric_debug_meter(input)
-	_update_subzero_debug_meter(input) # Moving it along by PI for a more dynamic demo
+	_update_subzero_debug_meter(sin(_demo_duration_in_seconds + 0.7))
+	_update_symmetric_debug_meter(sin(_demo_duration_in_seconds + 0.3))
+	_update_negative_range_debug_meter(sin(_demo_duration_in_seconds + 1))
+	_update_zero_and_up_debug_meter(sin(_demo_duration_in_seconds + 2.9))
 	_demo_duration_in_seconds += delta
-	
-
-func _update_symmetric_debug_meter(input) -> void:
-	var symmetric_input = input * 100
-	$SymmetricDebugMeter.value(symmetric_input)
-	
-	var floored_symmetric_input = round(symmetric_input)
-	update_zero_label(floored_symmetric_input)
-	if floored_symmetric_input == 0:
-		play_zero_highlighted()
-	
-	var did_peak = int(round(abs(symmetric_input))) == 100
-	update_peaked_label(did_peak)
-	if did_peak:
-		play_meter_peaks()
-
-
-func update_zero_label(input) -> void:
-	if input == 0:
-		$ZeroLabel.highlighted = true
-
-		
-func play_zero_highlighted() -> void:
-		if preference_play_sounds && _zero_highlighted_is_ready_to_play:
-			$ZeroHighlighted.play()
-			_zero_highlighted_is_ready_to_play = false
-
-
-func update_peaked_label(did_peak) -> void:
-	if did_peak:
-		$PeakedLabel.highlighted = true
-
-func play_meter_peaks() -> void:
-		if preference_play_sounds && _meter_peaked_is_ready_to_play:
-			$MeterPeaked.play()
-			_meter_peaked_is_ready_to_play = false
 
 
 func _update_subzero_debug_meter(input) -> void:
-	var ranged_input = ((input + 1) * -7.5) + 10
-	$SubzeroDebugMeter.value(ranged_input)
-	update_zero_label(ranged_input)
+	# Meter range (max, min): 10, -5
+	var value = ((input + 1) * -10) + 12.5 # Exceeding range to show overflow
+	$SubzeroMeter.value(value)
+
+
+func _update_symmetric_debug_meter(input) -> void:
+	# Meter range (max, min): 0, -100
+	var value = (input - 1) * 50
+	$SymmetricMeter.value(value)
 	
-	var rounded_ranged_input = round(ranged_input)
-	update_zero_label(rounded_ranged_input)
-	if rounded_ranged_input == 0:
-		play_zero_highlighted()
-	
-	var did_peak = int(round(rounded_ranged_input)) == -20
-	update_peaked_label(did_peak)
-	if did_peak:
-		play_meter_peaks()
+
+func _update_negative_range_debug_meter(input) -> void:
+	# Meter ranges from (max, min): -50, -100
+	var value = ((input - 1) * 25) - 50
+	$NegativeRangeMeter.value(value)
 
 
+func _update_zero_and_up_debug_meter(input) -> void:
+	# Meter range (max, min): 100, 0.
+	var value = (input + 1) * 50
+	$ZeroAndUpMeter.value(value)
 
-func _on_zero_highlighted_finished() -> void:
-	_zero_highlighted_is_ready_to_play = true
+
+# Events
+# --------------------------------------------------------------------------------------------------
+
+func _on_input_exceeding_range() -> void:
+	$ExceededLabel.highlighted = true
+	if _play_event_sounds:
+		$ExceedingRange.play()
 
 
-func _on_meter_peaked_finished() -> void:
-	_meter_peaked_is_ready_to_play = true
+func _on_input_reaching_target_value() -> void:
+	$TargetLabel.highlighted = true
+	if _play_event_sounds:
+		$TargetReached.play()
