@@ -29,4 +29,4 @@ _global_script_class_icons={
 config/name="DebugComponents"
 run/main_scene="res://demo/usageDemo.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://demo/icon.svg"
