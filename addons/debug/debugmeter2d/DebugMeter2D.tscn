@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://e88f751xj6hs"]
+[gd_scene load_steps=3 format=3 uid="uid://mj0svhgtmiyt"]
 
-[ext_resource type="Script" path="res://tools/debug/debugmeter2d/DebugMeter2D.gd" id="1_6qghl"]
+[ext_resource type="Script" path="res://addons/debug/debugmeter2d/DebugMeter2D.gd" id="1_6qghl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3w1n0"]
 font_size = 33
@@ -16,7 +16,7 @@ script = ExtResource("1_6qghl")
 max_value = 100.0
 min_value = 0.0
 initial_value = 100.0
-relative_position_of_baseline = 0.0
+relative_position_of_target_line = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Bar" type="ColorRect" parent="."]

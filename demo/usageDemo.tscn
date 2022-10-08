@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://26xdigjj3lvv"]
+[gd_scene load_steps=6 format=3 uid="uid://1ta81f1nxewd"]
 
 [ext_resource type="Script" path="res://demo/usageDemo.gd" id="1_b7eub"]
-[ext_resource type="PackedScene" uid="uid://e88f751xj6hs" path="res://tools/debug/debugmeter2d/DebugMeter2D.tscn" id="1_gwqr4"]
-[ext_resource type="PackedScene" uid="uid://bo7xnx4vak3gw" path="res://tools/debug/debugstatelabel2d/DebugStateLabel2D.tscn" id="2_mmtn2"]
+[ext_resource type="PackedScene" uid="uid://mj0svhgtmiyt" path="res://addons/debug/debugmeter2d/DebugMeter2D.tscn" id="1_gwqr4"]
+[ext_resource type="PackedScene" path="res://addons/debug/debugstatelabel2d/DebugStateLabel2D.tscn" id="2_mmtn2"]
 [ext_resource type="AudioStream" uid="uid://54bvexpkrxhg" path="res://demo/bong_001.wav" id="4_eyw0t"]
 [ext_resource type="AudioStream" uid="uid://bio4flbkok55j" path="res://demo/click_003.wav" id="5_ceqkg"]
 
@@ -26,7 +26,7 @@ offset_right = 156.0
 offset_bottom = -62.0
 max_value = 10.0
 min_value = -5.0
-initial_value = -3.0
+initial_value = -0.01
 relative_position_of_target_line = 66.74
 change_bar_color_below_target_line = true
 
@@ -41,7 +41,7 @@ offset_right = 312.0
 offset_bottom = -62.0
 max_value = 0.0
 min_value = -100.0
-initial_value = 0.0
+initial_value = -52.11
 relative_position_of_target_line = 52.106
 change_bar_color_below_target_line = true
 
@@ -58,7 +58,7 @@ grow_horizontal = 1
 grow_vertical = 0
 max_value = -50.0
 min_value = -100.0
-initial_value = -64.0
+initial_value = -66.64
 relative_position_of_target_line = 33.259
 change_bar_color_below_target_line = true
 
@@ -73,6 +73,7 @@ offset_right = 614.0
 offset_bottom = -58.0
 grow_horizontal = 1
 grow_vertical = 0
+initial_value = 50.0
 relative_position_of_target_line = 4.213
 change_bar_color_below_target_line = true
 
@@ -86,9 +87,8 @@ offset_top = 123.0
 offset_right = -205.0
 offset_bottom = 123.0
 grow_horizontal = 0
-_is_highlighted = true
 _caption = "Target"
-_backdrop_color_highlighted = Color(0, 0.647059, 0.364706, 1)
+_backdrop_color_highlighted = Color(0, 0.568627, 0.894118, 1)
 
 [node name="ExceededLabel" parent="." instance=ExtResource("2_mmtn2")]
 layout_mode = 1
@@ -100,7 +100,6 @@ offset_top = 179.0
 offset_right = -205.0
 offset_bottom = 179.0
 grow_horizontal = 0
-_is_highlighted = true
 _caption = "Exceeded"
 _backdrop_color_highlighted = Color(0.784314, 0.0509804, 0.027451, 1)
 

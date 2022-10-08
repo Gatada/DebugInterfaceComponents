@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bo7xnx4vak3gw"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://tools/debug/debugstatelabel2d/DebugStateLabel2D.gd" id="1_g1j6m"]
+[ext_resource type="Script" path="res://addons/debug/debugstatelabel2d/DebugStateLabel2D.gd" id="1_g1j6m"]
 
 [node name="State" type="Control"]
 layout_mode = 3

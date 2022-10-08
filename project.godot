@@ -12,16 +12,16 @@ _global_script_classes=[{
 "base": "Control",
 "class": &"DebugMeter2D",
 "language": &"GDScript",
-"path": "res://tools/debug/debugmeter2d/DebugMeter2D.gd"
+"path": "res://addons/debug/debugmeter2d/DebugMeter2D.gd"
 }, {
 "base": "Control",
 "class": &"DebugStateMeter2D",
 "language": &"GDScript",
-"path": "res://tools/debug/debugstatelabel2d/DebugStateLabel2D.gd"
+"path": "res://addons/debug/debugstatelabel2d/DebugStateLabel2D.gd"
 }]
 _global_script_class_icons={
-"DebugMeter2D": "res://tools/debug/debugmeter2d/DebugMeter2D.svg",
-"DebugStateMeter2D": "res://tools/debug/debugstatelabel2d/DebugStateLabel2D.svg"
+"DebugMeter2D": "res://addons/debug/debugmeter2d/DebugMeter2D.svg",
+"DebugStateMeter2D": "res://addons/debug/debugstatelabel2d/DebugStateLabel2D.svg"
 }
 
 [application]
