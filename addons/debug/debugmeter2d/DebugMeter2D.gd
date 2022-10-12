@@ -58,11 +58,8 @@ signal input_exceeds_range()
 ## The input variable as it is shown below the bar.
 @onready var _actual_value: float = initial_value
 
-## The offset of center.
+## Used to center the bar when zero is within the range of the meter.
 var _center_offset: float
-
-## The vertical screen position of the target value line relative to screen size.
-var target_line_screen_position: float = 0
 
 ## The actual value represented by the target value line
 var _target_line_value: float = 0
@@ -75,6 +72,7 @@ func _ready() -> void:
 		$Targetvalue.show()
 	else:
 		$Targetvalue.hide()
+
 
 func _process(_delta) -> void:
 	if Engine.is_editor_hint():
@@ -96,6 +94,7 @@ func value(new_value: float) -> void:
 		_update_value_label(_actual_value)
 		_update_bar()
 		_update_bar_color()
+
 
 # Handling Bar Value Updates
 # --------------------------------------------------------------------------------------------------
