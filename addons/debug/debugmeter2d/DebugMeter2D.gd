@@ -71,7 +71,6 @@ var _target_line_value: float = 0
 func _ready() -> void:
 	_setup()
 	_update_target_value_line_as_needed(initial_value)
-	value(initial_value)	
 	if show_target_line:
 		$Targetvalue.show()
 	else:
